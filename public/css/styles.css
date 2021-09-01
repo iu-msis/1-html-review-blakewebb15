@@ -1,4 +1,4 @@
-body {
+body{
     font-family: Arial, Helvetica, sans-serif;
     color: floralwhite;
     background-color: rgb(174, 174, 194);
@@ -23,7 +23,7 @@ body {
     font-size: larger;
   }
 
-  .email:hover{
+  #email:hover{
     font-weight: bold;
     color: honeydew;
   }
