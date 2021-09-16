@@ -1,30 +1,61 @@
 <!doctype html>
+<html lang="en">
 <head>
-  <title>Home</title>
   
-  <link href="css/bootstrap-4.5.3-dist/css/bootstrap.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
+  <title>Home</title>
+
+  <script src="https://unpkg.com/vue@next"></script>
 </head>
-<header>
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html">Home</a>
-      <a href="books.html">Books</a>
-      <a href="hobbies.html">Hobbies</a>
-    </div>
-  </nav>
-</header>
+
 
 <body>
-  <div class="bodycontent">
- <a target="_blank" href="https://randomuser.me/api/portraits/women/4.jpg"><img src="img/person_img.jpg" alt = "Picture of Judith Wright" class="rounded-circle" height="200" width="200"></a>
-  <h1><b>Judith Wright</b></h1></br>
-  <h2>United States of America</h2>
-  <h3>DOB: 8/7/1964</h3>
-  <h3>Age: 57</h3>
-  <h3>Email: <a href="mailto:email@example.com" id = "email">judith.wright@example.com</a></h3>
-</body>
-<footer><p style="font-size: smaller;">Image Source: https://randomuser.me/api/portraits/women/4.jpg</p></footer>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">MSIS Data and Systems</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a  aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a  href="books.html">Books</a>
+          </li>
+          <li class="nav-item">
+            <a  href="hobbies.html">Hobbies</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<div class = "centerContent">
+  <div id= "offerApp">
+ <a target="_blank" v-bind:href="person.picture.thumbnail"><img v-bind:src="person.picture.large" alt = "Picture of Judith Wright" class="rounded-circle" height="200" width="200"></a>
+  <h1><b>{{person.name.first}} {{person.name.last}}</b></h1></br>
+  <h2>{{person.location.state}}, {{person.location.country}}</h2>
+  <h3>DOB: {{person.dob.date}}</h3>
+  <h3>Age: {{person.dob.age}}</h3>
+  <h3>Email: <a href="mailto:email@example.com" id = "email">{{person.email}}</a></h3>
+  <p style="font-size: smaller;">Image Source: https://randomuser.me/api/</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  <script src="js/index.js"></script>
 </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+</body>
+
+
+
 
 </html>
