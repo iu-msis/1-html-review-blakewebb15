@@ -1,0 +1,41 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "title": "Alfreds Futterkiste",
+            "author": "Maria Andera",
+            "year": 2000,
+            "publisher": "The Great Publisher",
+            "pageCount": 156,
+            "msrp": "$29.99"
+        },
+        {
+            "id": 2,
+            "title": "Scary Nights",
+            "author": "Jennifer Loki",
+            "year": 2006,
+            "publisher": "The Greater Publisher",
+            "pageCount": 46,
+            "msrp": "$9.99"
+        },
+        {
+            "id": 3,
+            "title": "Beautiful Nights",
+            "author": "William Williams",
+            "year": 1999,
+            "publisher": "The Greatest Publisher",
+            "pageCount": 455,
+            "msrp": "$24.99"
+        },
+        {
+            "id": 4,
+            "title": "Stars in the Sky",
+            "author": "Phillip Phillips",
+            "year": 2012,
+            "publisher": "The Alright Publisher",
+            "pageCount": 124,
+            "msrp": "$0.99"
+        }
+        
+    ]
+}

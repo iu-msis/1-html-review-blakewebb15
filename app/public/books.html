@@ -7,6 +7,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
   <title>Books</title>
+
+  <script src="https://unpkg.com/vue@next"></script>
 </head>
 
 
@@ -32,76 +34,56 @@
       </div>
     </div>
   </nav>
-
+  
   <div class = "centerContent">
-        <table id="taskTable" class="table-striped">
-          <thead>
-        <tr style="font-size: larger;">
+  
+  <div id = "bookApp">
+
+  
+    <table class="table">
+      <thead>
+        <tr>
           <th>Title</th>
-          <th>Author(s)</th>
+          <th>Author</th>
           <th>Year Published</th>
           <th>Publisher</th>
           <th>Page Count</th>
           <th>MSRP</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Maria Andera</td>
-          <td>2000</td>
-          <td>The Great Publisher</td>
-          <td>156</td>
-          <td>$29.99</td>
-        </tr>
-        <tr>
-            <td>Scary Nights</td>
-            <td>Jennifer Loki</td>
-            <td>2006</td>
-            <td>The Greater Publisher</td>
-            <td>46</td>
-            <td>$9.99</td>
-        </tr>
-        <tr>
-            <td>Beautiful Nights</td>
-            <td>William Williams</td>
-            <td>1999</td>
-            <td>The Greatest Publisher</td>
-            <td>455</td>
-            <td>$24.99</td>
-        </tr>
-        <tr>
-            <td>Stars in the Sky</td>
-            <td>Phillip Phillips</td>
-            <td>2012</td>
-            <td>The Alright Publisher</td>
-            <td>124</td>
-            <td>$0.99</td>
-        </tr>
-      </tbody>
-        <tr>
-            <form method="post" action="" class="form-inline">
-            <td><input type="text" name = "Title"></td>
-            <td><input type="text" name = "Author"></td>
-            <td><input type="text" name = "PublishYear"></td>
-            <td><input type="text" name = "Publisher"></td>
-            <td><input type="text" name = "PageCount"></td>
-            <td><input type="text" name = "Price"></td>
-        </form>
-        </tr>
-      </table>
+        <tbody>
+            <tr v-for="book in books">
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.pubYear }}</td>
+                <td>{{ book.publisher }}</td>
+                <td>{{ book.pageCount }}</td>
+                <td>{{ book.msrp }}</td>
+            </tr>
+        </tbody>
+    </table>
       <input type="button" value="Add Book"><br>
-    
+
+
+      <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
+  <script src="js/books.js"></script>
+  
+
+
+
+
   <a target="_blank" href="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8OXx8fGVufDB8fHx8&w=1000&q=80"><img src="img/book.jfif" alt="Book Picture" width="1000" height="500" style="margin-top: 2%;"></a>
   <p style="font-size: smaller;">Image Source: https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fimages%2Fthings%2Fbook&psig=AOvVaw08RwJ0rf9p5rKtR1KdTXFa&ust=1630539924012000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCKDW2tm43PICFQAAAAAdAAAAABAD </p>
-<!Tablesort plugin from https://github.com/tristen/tablesort>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<!-- <!Tablesort plugin from https://github.com/tristen/tablesort> -->
 <script src="js/tablesort.min.js"></script>
 <script>
   new Tablesort(document.getElementById('taskTable'));
 </script>
+</div>
 </div>
 </body>
 </html>
