@@ -1,7 +1,9 @@
 const Books = {
     data() {
       return {
-          books: []
+          books: [],
+          bookForm: {},
+          selectedBook: null
         
         }
     },
@@ -18,6 +20,24 @@ const Books = {
                 console.error(err);
             })
         },
+        postNewBook(evt) {  
+            fetch('api/book/create.php', {
+                method:'POST',
+                body: JSON.stringify(this.bookForm),
+                headers: {
+                  "Content-Type": "application/json; charset=utf-8"
+                }
+              })
+              .then( response => response.json() )
+              .then( json => {
+                console.log("Returned from post:", json);
+                // TODO: test a result was returned!
+                this.books = json;
+                
+                // reset the form
+                this.bookForm = {};
+              });
+        }
 
     },
     created() {
