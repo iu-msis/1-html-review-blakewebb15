@@ -36,6 +36,8 @@ const Books = {
                 
                 // reset the form
                 this.bookForm = {};
+                this.fetchBookData();
+
               });
         }
 
