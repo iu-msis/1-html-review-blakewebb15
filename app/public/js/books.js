@@ -33,13 +33,12 @@ const Books = {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
                 this.books = json;
-                
-                // reset the form
-                this.bookForm = {};
-                this.fetchBookData();
-
               });
+            // reset the form
+            this.bookForm = {};
+            this.fetchBookData();
         }
+        
 
     },
     created() {
