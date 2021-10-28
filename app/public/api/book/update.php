@@ -31,8 +31,14 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO books (title, author, pubYear, publisher, pageCount, msrp)
-  VALUES (?, ?, ?, ?, ?, ?)'
+  'UPDATE books SET 
+    title = ?,
+    author = ?,
+    pubYear = ?,
+    publisher = ?,
+    pageCount = ?,
+    msrp = ?
+  WHERE id = ?'
 );
 
 $stmt->execute([
@@ -41,7 +47,8 @@ $stmt->execute([
   $_POST['pubYear'],
   $_POST['publisher'],
   $_POST['pageCount'],
-  $_POST['msrp']
+  $_POST['msrp'],
+  $_POST['id']
 ]);
 
 // Get auto-generated PK from DB
